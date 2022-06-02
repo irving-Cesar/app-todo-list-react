@@ -13,7 +13,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Enviou!")
+    console.log(title)
   }
 
   return (
@@ -27,7 +27,14 @@ function App() {
         <form onSubmit={handleSubmit}>
           <div className="form-control">
             <label htmlFor="title">O que você vai fazer?</label>
-            <input type="text" name="title" placeholder="Título da tarefa" />
+            <input
+              type="text"
+              name="title"
+              placeholder="Título da tarefa" 
+              onChange={(e) => setTitle(e.target.value)}
+              // value={title}
+              required
+            />
           </div>
           <input type="submit" value="enviar"></input>
         </form>
