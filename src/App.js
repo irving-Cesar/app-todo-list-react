@@ -25,6 +25,10 @@ function App() {
       <div className="form-todo">
         <h2>Insira a sua próxima tarefa:</h2>
         <form onSubmit={handleSubmit}>
+          <div className="form-control">
+            <label htmlFor="title">O que você vai fazer?</label>
+            <input type="text" name="title" placeholder="Título da tarefa" />
+          </div>
           <input type="submit" value="enviar"></input>
         </form>
         <p>Formulário</p>
