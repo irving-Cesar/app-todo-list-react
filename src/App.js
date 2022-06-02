@@ -49,6 +49,8 @@ function App() {
         "Content-Type": "application/json",
       },
     });
+
+    setTodos((prevState) => [...prevState, todo]); // Setando tarefas na div sem precisar atualizar a page
     
     setTitle("");
     setTime("");
@@ -95,10 +97,12 @@ function App() {
       <div className="list-todo">
         <h2>Lista de tarefas</h2>
         {todos.length === 0 && <p style={{textAlign: "center"}}>Não há tarefas</p>}
-        {/*Mostrando tarefas criadas*/}
-        {useEffect(() => {
-          todos.map((tarefa) => tarefa.title)
-        })}
+        {todos.map((tarefa) => (
+            <div className="tarefas" key={tarefa.id}>
+              <p>{tarefa.title}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   );
