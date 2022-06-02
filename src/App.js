@@ -37,11 +37,24 @@ function App() {
               required
             />
           </div>
+
+          <div className="time-control">
+            <label htmlFor="time">Duração da tarefa:</label>
+            <input
+              type="text"
+              name="time"
+              placeholder="Duração" 
+              onChange={(e) => setTime(e.target.value)}
+              value={time || ""}
+              required
+            />
+          </div>
+
           <input type="submit" value="enviar"></input>
         </form>
-        <p>Formulário</p>
       </div>
 
+    
       <div className="list-todo">
         <h2>Lista de tarefas</h2>
         {todos.length === 0 && <p>Não há tarefas</p>}
