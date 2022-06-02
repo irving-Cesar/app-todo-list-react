@@ -13,7 +13,8 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(title)
+    console.log(title);
+    setTitle("");
   }
 
   return (
@@ -32,7 +33,7 @@ function App() {
               name="title"
               placeholder="Título da tarefa" 
               onChange={(e) => setTitle(e.target.value)}
-              // value={title}
+              value={title || ""}
               required
             />
           </div>
