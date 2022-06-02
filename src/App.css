@@ -15,3 +15,21 @@
 .todo-header h1 {
   margin: 0;
 }
+
+.form-todo {
+  padding: 1em;
+  margin: 0.2em;
+  border-bottom: 1px solid #2c3035;
+}
+
+.form-todo h2, .list-todo h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+

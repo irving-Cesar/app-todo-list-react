@@ -20,15 +20,13 @@ function App() {
       time,
       done: false,
     };
-
-
-    setTitle("");
-    setTime("");
+    
 
     //Envio para a API
     console.log(todo);
-
-
+    
+    setTitle("");
+    setTime("");
   }
 
   return (
