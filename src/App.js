@@ -11,7 +11,21 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
+  // Carregar as tarefas quando der load na page
+  useEffect(() => {
+
+    const loadData = async() =>{
+
+      setLoading(true);
+
+      const res = await fetch(API + "/todos")
+        .then((res) => res.json())
+        .then((data) => data)
+        .catch((err) => console.log(err))
+    }
+  }, []);
+
+  const handleSubmit = async(e) => {
     e.preventDefault();
 
     const todo = {
@@ -21,6 +35,7 @@ function App() {
       done: false,
     };
 
+    //Enviando para a API
     await fetch(API + "/todos", {
       method: "POST",
       body: JSON.stringify(todo),
@@ -70,7 +85,6 @@ function App() {
           <input type="submit" value="enviar"></input>
         </form>
       </div>
-
     
       <div className="list-todo">
         <h2>Lista de tarefas</h2>
