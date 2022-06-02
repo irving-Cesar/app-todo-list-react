@@ -94,7 +94,11 @@ function App() {
     
       <div className="list-todo">
         <h2>Lista de tarefas</h2>
-        {todos.length === 0 && <p>Não há tarefas</p>}
+        {todos.length === 0 && <p style={{textAlign: "center"}}>Não há tarefas</p>}
+        {/*Mostrando tarefas criadas*/}
+        {useEffect(() => {
+          todos.map((tarefa) => tarefa.title)
+        })}
       </div>
     </div>
   );
