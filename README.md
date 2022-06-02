@@ -1,4 +1,4 @@
-# Aplicativo Todo
+# Aplicativo To-do
 
 Genrenciamento de tarefas utilizando o React js -
 Dados obtidos/guardados por 'API' Json
