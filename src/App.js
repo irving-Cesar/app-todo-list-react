@@ -16,13 +16,19 @@ function App() {
 
     const loadData = async() =>{
 
-      setLoading(true);
+      setLoading(true); // 'carregando'
 
       const res = await fetch(API + "/todos")
-        .then((res) => res.json())
-        .then((data) => data)
-        .catch((err) => console.log(err))
+        .then((res) => res.json()) // obtendo resposta e transformando em json
+        .then((data) => data) // recebendo dados 'res' e add na lista
+        .catch((err) => console.log(err)); // retorna se tiver algum erro
+
+      setLoading(false);
+
+      setTodos(res) // Recebendo valores da list
     }
+
+    loadData(); // rodar GET api
   }, []);
 
   const handleSubmit = async(e) => {
