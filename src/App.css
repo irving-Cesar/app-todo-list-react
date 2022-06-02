@@ -33,3 +33,17 @@
   margin-bottom: 1em;
 }
 
+.form-control label {
+  font-weight: bold;
+  font-size: .7em;
+  margin-bottom: .4em;
+}
+
+.form-control input {
+  border: 1px solid #222;
+  border-radius: 2px;
+  background-color: #2c3035;
+  padding: .5em;
+  color: #dfdfdf;
+}
+

@@ -1,6 +1,6 @@
 # Aplicativo Todo
 
-Genrenciamento de tarefas utilizando o React js
+Genrenciamento de tarefas utilizando o React js -
 Dados obtidos/guardados por 'API' Json
 
 ### `npm start`
