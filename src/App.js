@@ -100,15 +100,16 @@ function App() {
     
       <div className="list-todo">
         <h2>Lista de tarefas</h2>
-        {todos.length === 0 && <p style={{textAlign: "center"}}>Não há tarefas</p>}
+        {todos.length === 0 && <p>Não há tarefas</p>}
         {todos.map((tarefa) => (
             <div className="tarefas" key={tarefa.id}>
-              <h3>{tarefa.title}</h3>
+              <h3 className={tarefa.done ? "tarefa-done" : ""}>{tarefa.title}</h3>
               <p>Duração{tarefa.time}</p>
               <div className="actions">
                 <span>
                   {!tarefa.done ? <BsXCircleFill /> : <BsFillCheckCircleFill />}
                 </span>
+                <BsTrash />
               </div>
             </div>
           ))
