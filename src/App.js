@@ -1,7 +1,7 @@
 import './App.css';
 
 import { useState, useEffect } from 'react'
-import { BsTrash, BsBookMarkCheck, BsBookMarkCheckFill } from 'react-icons/bs'
+import { BsTrash, BsFillCheckCircleFill, BsXCircleFill } from 'react-icons/bs'
 
 const API = "http://localhost:5000";
 
@@ -56,6 +56,10 @@ function App() {
     setTime("");
   }
 
+  if (loading) {
+    return <p>Carregando...</p>
+  }
+
   return (
     <div className="App">
       <div className="todo-header">
@@ -99,7 +103,13 @@ function App() {
         {todos.length === 0 && <p style={{textAlign: "center"}}>Não há tarefas</p>}
         {todos.map((tarefa) => (
             <div className="tarefas" key={tarefa.id}>
-              <p>{tarefa.title}</p>
+              <h3>{tarefa.title}</h3>
+              <p>Duração{tarefa.time}</p>
+              <div className="actions">
+                <span>
+                  {!tarefa.done ? <BsXCircleFill /> : <BsFillCheckCircleFill />}
+                </span>
+              </div>
             </div>
           ))
         }
