@@ -81,8 +81,8 @@ input[type="submit"] {
 }
 
 .tarefa-done {
-  text-decoration: "line-through";
-  color: rgb(90, 240, 122);
+  text-decoration: line-through;
+  color: rgb(240, 90, 102);
 }
 
 .tarefas p {

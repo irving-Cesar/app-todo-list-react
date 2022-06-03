@@ -20,7 +20,7 @@ function App() {
 
       const res = await fetch(API + "/todos")
         .then((res) => res.json()) // obtendo resposta e transformando em json
-        .then((data) => data) // recebendo dados 'res' e add na lista
+        .then((data) => data) // recebendo dados 'res' e adicionando na lista
         .catch((err) => console.log(err)); // retorna se tiver algum erro
 
       setLoading(false);
@@ -61,7 +61,21 @@ function App() {
       method: "DELETE",
     });
 
-    setTodos((prevState) => [...prevState.filter((todo) => todo.id !== id)]);
+    setTodos((prevState) => prevState.filter((todo) => todo.id !== id));
+  }
+
+  const handleEdit = async(tarefa) => {
+    tarefa.done = !tarefa.done;
+
+    const data = await fetch(API + "/todos/" + tarefa.id, { // Receber valores do DB
+      method: "PUT",
+      body: JSON.stringify(tarefa),
+      headers: {
+        "Content-Type": "application/json", 
+      },
+    });
+
+    setTodos((prevState) => prevState.map((t) => (t.id === data.id ? t = data : t))); 
   }
 
   if (loading) {
@@ -112,9 +126,9 @@ function App() {
         {todos.map((tarefa) => (
             <div className="tarefas" key={tarefa.id}>
               <h3 className={tarefa.done ? "tarefa-done" : ""}>{tarefa.title}</h3>
-              <p>Duração{tarefa.time}</p>
+              <p>Duração: {tarefa.time}</p>
               <div className="actions">
-                <span>
+                <span onClick={() => handleEdit(tarefa)}>
                   {!tarefa.done ? <BsXCircleFill /> : <BsFillCheckCircleFill />}
                 </span>
                 <BsTrash onClick={() => handleDelete(tarefa.id)} />
