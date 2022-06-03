@@ -71,30 +71,34 @@ input[type="submit"] {
   text-align: center;
 }
 
-.todo {
+.tarefas {
   border-bottom: 1px solid #444;
   padding: 1em 0;
 }
 
-.todo h3 {
+.tarefas h3 {
   margin-bottom: .5em;
 }
 
-.todo-done {
+.tarefa-done {
   text-decoration: "line-through";
-  color: rgb(240, 90, 146);
+  color: rgb(90, 240, 122);
 }
 
-.todo p {
+.tarefas p {
   text-align: left;
   font-style: italic;
   font-size: .7em;
   margin-bottom: 1.5em;
 }
 
-.todo svg {
+.tarefas svg {
   font-size: 1.2em;
   cursor: pointer;
   margin-right: 1em;
   transition: .5s;
+}
+
+.tarefas svg:hover {
+  color: rgb(240, 90, 120);
 }

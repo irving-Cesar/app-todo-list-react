@@ -56,6 +56,10 @@ function App() {
     setTime("");
   }
 
+  const handleDelete = () => {
+    
+  }
+
   if (loading) {
     return <p>Carregando...</p>
   }
@@ -94,7 +98,7 @@ function App() {
             />
           </div>
 
-          <input type="submit" value="enviar"></input>
+          <input type="submit" value="Criar Tarefa"></input>
         </form>
       </div>
     
@@ -109,7 +113,7 @@ function App() {
                 <span>
                   {!tarefa.done ? <BsXCircleFill /> : <BsFillCheckCircleFill />}
                 </span>
-                <BsTrash />
+                <BsTrash onClick={() => handleDelete(tarefa.id)} />
               </div>
             </div>
           ))
