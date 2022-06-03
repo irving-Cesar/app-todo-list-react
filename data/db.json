@@ -1,22 +1,3 @@
 {
-  "todos": [
-    {
-      "id": 0.883695402096007,
-      "title": "tarega 1",
-      "time": "1",
-      "done": false
-    },
-    {
-      "id": 0.025033863346988428,
-      "title": "tarefa 2",
-      "time": "2",
-      "done": false
-    },
-    {
-      "id": 0.367319670668802,
-      "title": "tarefa 3",
-      "time": "3",
-      "done": false
-    }
-  ]
+  "todos": []
 }

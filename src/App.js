@@ -56,8 +56,12 @@ function App() {
     setTime("");
   }
 
-  const handleDelete = () => {
-    
+  const handleDelete = async(id) => {
+    await fetch(API + "/todos/" + id, {
+      method: "DELETE",
+    });
+
+    setTodos((prevState) => [...prevState.filter((todo) => todo.id !== id)]);
   }
 
   if (loading) {
