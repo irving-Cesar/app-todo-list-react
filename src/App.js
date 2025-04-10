@@ -13,23 +13,26 @@ function App() {
 
   // Carregar as tarefas quando der load na page
   useEffect(() => {
-
-    const loadData = async() =>{
-
-      setLoading(true); // 'carregando'
-
-      const res = await fetch(API + "/todos")
-        .then((res) => res.json()) // obtendo resposta e transformando em json
-        .then((data) => data) // recebendo dados 'res' e adicionando na lista
-        .catch((err) => console.log(err)); // retorna se tiver algum erro
-
-      setLoading(false);
-
-      setTodos(res) // Recebendo valores da list
-    }
-
-    loadData(); // rodar GET api
-  }, []);
+      const loadData = async () => {
+        setLoading(true);
+  
+        try {
+          const res = await fetch(API + "/todos");
+          const data = await res.json();
+          setTodos(data);
+        } catch (err) {
+          console.error("Erro ao buscar dados da API:", err);
+          // fallback se a API falhar
+          setTodos([
+            { id: 1, title: "Tarefa de exemplo", time: "1h", done: false }
+          ]);
+        }
+  
+        setLoading(false);
+      };
+  
+      loadData();
+    }, []);
 
   const handleSubmit = async(e) => {
     e.preventDefault();
