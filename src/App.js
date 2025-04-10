@@ -3,7 +3,7 @@ import './App.css';
 import { useState, useEffect } from 'react'
 import { BsTrash, BsFillCheckCircleFill, BsXCircleFill } from 'react-icons/bs'
 
-const API = "http://localhost:5000";
+const API = "https://todo-api-9qd3.onrender.com";
 
 function App() {
   const [title, setTitle] = useState("");
