@@ -1,0 +1,16 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Estudar React",
+      "time": "2h",
+      "done": true
+    },
+    {
+      "id": 0.0399280628950176,
+      "title": "Estudar tailwind",
+      "time": "2",
+      "done": true
+    }
+  ]
+}
